@@ -1,0 +1,83 @@
+/*
+Java- Customers Based on Customer Name- 3.4
+bookmark_border
+
+    subject Codingcasino 100 points
+
+Description
+
+1.      Create a program to search the customer based on the customer name from a given array.
+
+Note: use linear search algorithm to get the data
+
+
+    create a method to getCustomer(String name) method which will return the customer details as a String array.
+    call the getCustomer method and print the information
+
+
+Sample Input
+Kiran
+Sample output
+205  Kiran  Mumbai 
+
+
+
+Instructions
+
+    Do not change the provided class/method names unless instructed
+    Ensure your code compiles without any errors/warning/deprecation
+    Follow best practices while coding
+    Avoid too many & unnecessary usage of white spaces (newline, spaces, tabs, ...), except to make the code readable
+    Use appropriate comments at appropriate places in your exercise, to explain the logic, rational, solutions, so that evaluator can know them
+    Try to retain the original code given in the exercise, to avoid any issues in compiling & running your programs
+    Always test the program thoroughly, before saving/submitting exercises/project
+    For any issues with your exercise, contact your coach
+
+Warnings
+
+    Take care of white space/trailing white space
+    Trim the output and avoid special characters
+    Avoid printing unnecessary values other than expected/asked output
+
+Execution time limit
+
+10 seconds
+*/
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+public class Source 
+{
+String customerDetails[][]={{"105","Prabu","Chennai"},{"102","Krithick","Bangalore"},{"205","Kiran","Mumbai" },
+			{"202", "Shravan", "Pune" },{"252","Chandrav","Delhi"}};
+	
+	public String[] getCustomer(String city)
+	{
+	    int i, index = 0;
+	    for(i=0; i<customerDetails.length; i++){
+            if(city.equals(customerDetails[i][1])){
+	            index = i;
+	            break;
+	        }
+	    }return customerDetails[index];
+    }
+    
+    public static void main(String args[])
+    {
+      Scanner myScanner = new Scanner(System.in);
+      String myString = myScanner.next();
+      
+      Source obj = new Source();
+      String[] answer = obj.getCustomer(myString);
+      
+      for(String i : answer){
+            System.out.print(i + " ");
+        }
+        
+      myScanner.close();
+    }
+}
+		 
